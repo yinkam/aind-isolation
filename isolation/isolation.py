@@ -37,7 +37,7 @@ class Board(object):
     BLANK = 0
     NOT_MOVED = None
 
-    def __init__(self, player_1, player_2, width=7, height=7):
+    def __init__(self, player_1, player_2, width=9, height=9):
         self.width = width
         self.height = height
         self.move_count = 0
@@ -48,7 +48,7 @@ class Board(object):
 
         # The last 3 entries of the board state includes initiative (0 for
         # player 1, 1 for player 2) player 2 last move, and player 1 last move
-        self._board_state = [Board.BLANK] * (width * height + 3)
+        self._board_state = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 56, 55]
         self._board_state[-1] = Board.NOT_MOVED
         self._board_state[-2] = Board.NOT_MOVED
 
